@@ -1,9 +1,12 @@
 {
-  "name": "object-assign",
+  "name": "es-object-assign",
   "version": "4.1.1",
-  "description": "ES2015 `Object.assign()` ponyfill",
+  "description": "Module-friendly fork of [object-assign](https://sindresorhus/object-assign). ES2015 `Object.assign()` ponyfill",
   "license": "MIT",
-  "repository": "sindresorhus/object-assign",
+  "repository": "zeekay/es-object-assign",
+  "main": "index.js",
+  "module": "index.mjs",
+  "js:next": "index.mjs",
   "author": {
     "name": "Sindre Sorhus",
     "email": "sindresorhus@gmail.com",
@@ -35,6 +38,7 @@
   ],
   "devDependencies": {
     "ava": "^0.16.0",
+    "handroll": "0.2.6",
     "lodash": "^4.16.4",
     "matcha": "^0.7.0",
     "xo": "^0.16.0"
