@@ -40,7 +40,7 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "coffee-script": "1.12.4",
-    "handroll": "0.2.6",
+    "handroll": "0.2.9",
     "lodash": "^4.16.4",
     "matcha": "^0.7.0",
     "xo": "^0.16.0"
