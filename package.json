@@ -20,7 +20,8 @@
     "bench": "matcha bench.js"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.mjs"
   ],
   "keywords": [
     "object",
