@@ -1,6 +1,4 @@
-getOwnPropertySymbols = Object.getOwnPropertySymbols
-hasOwnProperty        = Object::hasOwnProperty
-propIsEnumerable      = Object::propertyIsEnumerable
+getOwnSymbols = Object.getOwnPropertySymbols
 
 toObject = (val) ->
   if val == null or val == undefined
@@ -31,11 +29,10 @@ shouldUseNative = ->
       test3[letter] = letter
     if Object.keys(Object.assign({}, test3)).join('') != 'abcdefghijklmnopqrst'
       return false
-    return true
+    true
   catch err
     # We don't expect any of the above to throw, but better to be safe.
-    return false
-  return
+    false
 
 export default objectAssign = do ->
   return Object.assign if shouldUseNative()
@@ -46,10 +43,10 @@ export default objectAssign = do ->
     for source in sources
       from = Object(source)
       for key of from
-        if hasOwnProperty.call(from, key)
+        if Object::hasOwnProperty.call(from, key)
           to[key] = from[key]
-      if getOwnPropertySymbols
-        for symbol in getOwnPropertySymbols(from)
-          if propIsEnumerable.call from, symbol
+      if getOwnSymbols
+        for symbol in getOwnSymbols(from)
+          if Object::propIsEnumerable.call from, symbol
             to[symbol] = from[symbol]
     to
