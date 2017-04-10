@@ -1,18 +1,18 @@
-require 'shortcake'
+require 'sake-core'
 
-use 'cake-publish'
-use 'cake-version'
+use 'sake-bundle'
+use 'sake-outdated'
+use 'sake-publish'
+use 'sake-version'
 
 task 'clean', 'clean project', ->
-  exec 'rm -rf dist'
+  exec 'rm -rf lib'
 
 task 'build', 'build project', ->
-  handroll = require 'handroll'
-
-  bundle = yield handroll.bundle
+  bundle.write
     entry: 'src/index.coffee'
-  yield bundle.write format: 'es'
-  yield bundle.write format: 'cjs'
+    compilers:
+      coffee: version: 1
 
 task 'watch', 'watch project', ->
   watch 'src/*.coffee', (filename) ->
