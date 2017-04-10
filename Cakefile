@@ -1,5 +1,3 @@
-require 'sake-core'
-
 use 'sake-bundle'
 use 'sake-outdated'
 use 'sake-publish'
